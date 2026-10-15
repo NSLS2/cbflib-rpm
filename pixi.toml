@@ -1,0 +1,14 @@
+[workspace]
+authors = ["Jakub Wlodek <jwlodek@bnl.gov>"]
+channels = ["conda-forge"]
+name = "cbflib-rpm"
+platforms = ["linux-64"]
+version = "0.1.0"
+
+[tasks]
+lint = "pre-commit run --all-files"
+
+[dependencies]
+copier = ">=9.14.0,<10"
+python = ">=3.13,<3.14"
+pre-commit = ">=4.5.1,<5"

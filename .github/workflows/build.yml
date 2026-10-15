@@ -1,0 +1,31 @@
+---
+
+name: Build RPMs and SRPMs
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    name: EL${{ matrix.alma_version }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        alma_version: [8, 9, 10]
+    container:
+      image: almalinux:${{ matrix.alma_version }}
+      options: --user root
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v6
+
+      - name: Build RPM and SRPM
+        uses: ./.github/actions/build-rpm-and-srpm
+        with:
+          alma_version: ${{ matrix.alma_version }}

@@ -1,0 +1,12 @@
+RPMS/
+SRPMS/
+SPECS/
+SOURCES/
+BUILD/
+BUILDROOT/
+.vscode/
+*.rpm
+*.srpm
+# pixi environments
+.pixi/*
+!.pixi/config.toml
