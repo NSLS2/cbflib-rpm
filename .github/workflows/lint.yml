@@ -22,7 +22,7 @@ jobs:
 
       - name: Install rpmlint
         run: |
-          dnf install -y rpmlint
+          dnf install -y git rpmlint
 
       - name: Setup pixi
         uses: prefix-dev/setup-pixi@8ca4608ef7f4daeb54f5205b20d0b7cb42f11143  # v0.8.14
