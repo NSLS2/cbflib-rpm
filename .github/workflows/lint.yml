@@ -20,6 +20,9 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v6
 
+      - name: Mark checkout as safe for Git
+        run: git config --global --add safe.directory "$GITHUB_WORKSPACE"
+
       - name: Install rpmlint
         run: |
           dnf install -y git rpmlint
