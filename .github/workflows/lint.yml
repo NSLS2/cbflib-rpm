@@ -17,15 +17,12 @@ jobs:
       options: --user root
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v6
-
-      - name: Install rpmlint
+      - name: Install Git and rpmlint
         run: |
           dnf install -y git rpmlint
 
-      - name: Mark checkout as safe for Git
-        run: git config --global --add safe.directory "$GITHUB_WORKSPACE"
+      - name: Checkout code
+        uses: actions/checkout@v6
 
       - name: Setup pixi
         uses: prefix-dev/setup-pixi@8ca4608ef7f4daeb54f5205b20d0b7cb42f11143  # v0.8.14
