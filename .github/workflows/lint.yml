@@ -17,12 +17,16 @@ jobs:
       options: --user root
 
     steps:
+      # git must be present before checkout so a real repo (with .git) is cloned for pre-commit
+      - name: Install dependencies
+        run: |
+          dnf install -y git rpmlint
+
       - name: Checkout code
         uses: actions/checkout@v6
 
-      - name: Install rpmlint
-        run: |
-          dnf install -y rpmlint
+      - name: Mark workspace as safe for git
+        run: git config --global --add safe.directory "$GITHUB_WORKSPACE"
 
       - name: Setup pixi
         uses: prefix-dev/setup-pixi@ad1da6449d9e506fd127fd67ab2d054a769f6a94  # v0.11.2

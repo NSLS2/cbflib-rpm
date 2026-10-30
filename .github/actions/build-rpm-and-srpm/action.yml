@@ -37,7 +37,7 @@ runs:
 
     - name: Install dependencies
       run: |
-        dnf install -y gcc make rpmdevtools
+        dnf install -y gcc make rpmdevtools cmake hdf5-devel libtiff-devel gcc-c++
       shell: bash
 
     - name: Build srpm and rpm
