@@ -1,6 +1,6 @@
-# CBFlib RPM
+# Cbflib RPM
 
-RPM packaging for [CBFlib](https://github.com/dials/cbflib).
+RPM packaging for [cbflib](https://github.com/NSLS2/cbflib-rpm).
 
 To create an rpm/srm, simply use the included makefile running:
 
